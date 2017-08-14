@@ -3,7 +3,7 @@ EXTRA_CFLAGS += -O1
 #EXTRA_CFLAGS += -O3
 EXTRA_CFLAGS += -Wall
 #EXTRA_CFLAGS += -Wextra
-EXTRA_CFLAGS += -Werror
+#EXTRA_CFLAGS += -Werror
 #EXTRA_CFLAGS += -pedantic
 #EXTRA_CFLAGS += -Wshadow -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes
 EXTRA_CFLAGS += -Wframe-larger-than=1536
@@ -1574,9 +1574,9 @@ $(MODULE_NAME)-$(CONFIG_MP_INCLUDED)+= core/rtw_bt_mp.o
 endif
 
 ifneq ($(CONFIG_RTL8812AU),)
-obj-$(CONFIG_RTL8812AU) := $(MODULE_NAME).o
+obj-m := rtl8812au.o
 else
-obj-m := $(MODULE_NAME).o
+obj-m := rtl8812au.o
 
 all: modules
 
